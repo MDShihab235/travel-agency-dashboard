@@ -63,6 +63,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     Sentry.captureException(error);
+
     details = error.message;
     stack = error.stack;
   }
