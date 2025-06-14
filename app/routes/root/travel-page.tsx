@@ -76,9 +76,9 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   ]);
 
   return {
-    trips: allTrips.map(({ $id, tripDetails, imageUrls }) => ({
+    trips: allTrips.map(({ $id, tripDetail, imageUrls }) => ({
       id: $id,
-      ...parseTripData(tripDetails),
+      ...parseTripData(tripDetail),
       imageUrls: imageUrls ?? [],
     })),
     total,
